@@ -13,6 +13,7 @@
     padding: 0;
     background-color: hsl(182, 24%, 73%);
     font-family: monospace;
+    color: hsl(184, 14%, 56%)
   }
 
   .container {
@@ -53,14 +54,12 @@
   } */
 
   .procContainer {
-    width: 100%;
     display: grid;
     grid-template-columns: 30% 30% 30%;
-    gap: 5%;
+    gap: 4%;
   }
 
  .procContainer div {
-    width: 100%;
     height: 2.5rem;
     background-color: hsl(183, 100%, 15%);
     border-radius: 4px;
@@ -70,7 +69,16 @@
     justify-content: center;
     color: hsl(0, 0%, 100%);
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
+ }
+
+ .procContainer div:hover {
+    background-color: rgb(159, 240, 251);
+    color: hsl(183, 100%, 15%);
+ }
+
+ #custom {
+    background-color: hsl(0, 0%, 100%);;
  }
 
 .num {
@@ -108,12 +116,19 @@
     margin-top: 20%;
   }
 
+  .person {
+    color: hsl(185, 41%, 84%);
+    font-size: x-small;
+  }
+
   .res {
     font-size: xx-large;
+    color: hsl(172, 67%, 45%);
   }
 
   .reset {
     background-color: rgb(159, 240, 251);
+    color: hsl(183, 100%, 15%);
     height: 2rem;
     border-radius: 6px;
     margin: 7%;
@@ -122,5 +137,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 700;
+    font-weight: 600;
   }
