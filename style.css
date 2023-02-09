@@ -24,7 +24,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 700px;
-    height: 400px;
+    height: 350px;
   }
 
   /* Left side */
@@ -64,6 +64,13 @@
     height: 2.5rem;
     background-color: hsl(183, 100%, 15%);
     border-radius: 4px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(0, 0%, 100%);
+    font-size: 14px;
+    font-weight: 700;
  }
 
 .num {
@@ -84,9 +91,36 @@
     width: 50%;
   }
 
+  .cont {
+    margin: 9%;
+  }
+
+  .tip {
+    display: flex;
+    justify-content: space-between;
+    color: hsl(0, 0%, 100%);
+  }
+
+  .total {
+    display: flex;
+    justify-content: space-between;
+    color: hsl(0, 0%, 100%);
+    margin-top: 20%;
+  }
+
+  .res {
+    font-size: xx-large;
+  }
+
   .reset {
-    background-color: aquamarine;
-    width: 99%;
+    background-color: rgb(159, 240, 251);
     height: 2rem;
     border-radius: 6px;
+    margin: 7%;
+    margin-top: 35%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
   }
