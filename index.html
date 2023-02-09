@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="icon"
       type="image/png"
@@ -13,31 +12,38 @@
     />
 
     <title>Tip calculator app</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
   <body>
-    <div class="mainContainer">
-      <div class="bill"></div>
-      <div></div>
-      <div></div>
+    <div class="container">
+      <div class="left">
+        <div class="bill">
+          <div>Bill</div>
+          <input class="number" type="number" placeholder="0.00" />
+        </div>
+        <div class="procentage">
+          <div>Select Tip %</div>
+          <div class="procContainer">
+            <div class="5">5%</div>
+            <div class="10">10%</div>
+            <div class="15">15%</div>
+            <div class="25">25%</div>
+            <div class="50">50%</div>
+            <div class="custom"></div>
+        </div>
+      </div>
+      <section>
+        <div class="num"><div>Number of People</div>
+        <div>Can't be zero</div></div>
+        <input class="number" type="number" placeholder="0.00" />
+      </section>
     </div>
+      <div class="right">
+        <div>Tip Amount <div>/ person</div></div>
+        <div>Total <div>/ person</div></div>
+        <div class="reset"></div>
+      </div>
 
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Harald Henriksson</a>.
-    </div>
+    <script src="main.js"></script>
   </body>
 </html>
 
