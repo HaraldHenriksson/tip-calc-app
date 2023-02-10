@@ -12,7 +12,7 @@
     margin: 0;
     padding: 0;
     background-color: hsl(182, 24%, 73%);
-    font-family: monospace;
+    font-family: 'Barlow Condensed', sans-serif;
     color: hsl(184, 14%, 56%)
   }
 
@@ -72,10 +72,10 @@
     font-weight: 600;
  }
 
- .procContainer div:hover {
+ /* .procContainer div:hover {
     background-color: rgb(159, 240, 251);
     color: hsl(183, 100%, 15%);
- }
+ } */
 
  #custom {
     background-color: hsl(0, 0%, 100%);;
@@ -138,4 +138,9 @@
     align-items: center;
     justify-content: center;
     font-weight: 600;
+    cursor: pointer;
+  }
+
+  input:hover {
+    border-color: hsl(172, 67%, 45%);
   }

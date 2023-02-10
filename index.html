@@ -11,7 +11,7 @@
       href="./images/favicon-32x32.png"
     />
 
-    <title>Tip calculator app</title>
+    <title>Tip Calculator App</title>
   </head>
 
   <body>
@@ -19,17 +19,17 @@
       <div class="left">
         <div class="bill">
           <div class="text">Bill</div>
-          <input class="number" type="number" placeholder="0.00" />
+          <input id="billInput" class="number" type="number" placeholder="0.00" />
         </div>
         <div class="procentage">
           <div>Select Tip %</div>
           <div class="procContainer">
-            <div class="5">5%</div>
-            <div class="10">10%</div>
-            <div class="15">15%</div>
-            <div class="25">25%</div>
-            <div class="50">50%</div>
-            <div id="custom"><input class="number" type="number" placeholder="%" /></div>
+            <div id="five" class="5">5%</div>
+            <div id="ten" class="10">10%</div>
+            <div id="fifteen" class="15">15%</div>
+            <div id="twentyFive" class="25">25%</div>
+            <div id="fifty" class="50">50%</div>
+            <div id="custom"><input id="input" class="number" type="number" placeholder="%" /></div>
           </div>
         </div>
         <section>
@@ -37,7 +37,7 @@
             <div>Number of People</div>
             <div>Can't be zero</div>
           </div>
-          <input class="number" type="number" placeholder="0" />
+          <input class="number" id="input" type="number" placeholder="0" />
         </section>
       </div>
       <div class="right">
@@ -57,7 +57,7 @@
             <div class="res">0.00kr</div>
           </div>
         </div>
-        <div class="reset">RESET
+        <div id="reset" class="reset">RESET
       </div>
     </div>
 
