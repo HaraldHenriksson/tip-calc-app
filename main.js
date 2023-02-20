@@ -1,3 +1,13 @@
+const tipBtns = document.querySelectorAll(
+  "#five, #ten, #fifteen, #twentyFive, #fifty"
+);
+const customTipInput = document.querySelector("#input");
+const billInput = document.querySelector("#billInput");
+const numPeopleInput = document.querySelector("#numInput");
+const tipAmountDisplay = document.querySelector("#tipRes");
+const totalDisplay = document.querySelector("#totalRes");
+const resetBtn = document.querySelector("#reset");
+
 const elements = document.querySelectorAll(
   "#five, #ten, #fifteen, #twentyFive, #fifty"
 );
@@ -13,33 +23,75 @@ elements.forEach((element) => {
   });
 });
 
-five.addEventListener("click", (e) => {});
-
-ten.addEventListener("click", (e) => {
-  // Your logic for the 10% div click event
+// Add click event listener to all tip buttons
+tipBtns.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    const btnValue = parseInt(btn.textContent);
+    if (!isNaN(btnValue)) {
+      setTipPercent(btnValue);
+    } else {
+      const customValue = parseInt(customTipInput.value);
+      if (!isNaN(customValue)) {
+        setTipPercent(customValue);
+      }
+    }
+  });
 });
 
-fifteen.addEventListener("click", (e) => {
-  // Your logic for the 15% div click event
+// Add input event listener to custom tip input field
+customTipInput.addEventListener("input", (e) => {
+  const customValue = parseInt(customTipInput.value);
+  if (!isNaN(customValue)) {
+    setTipPercent(customValue);
+  }
 });
 
-twentyFive.addEventListener("click", (e) => {
-  // Your logic for the 25% div click event
+// Add input event listener to bill input field
+billInput.addEventListener("input", (e) => {
+  updateTipAndTotal();
 });
 
-fifty.addEventListener("click", (e) => {
-  // Your logic for the 50% div click event
+// Add input event listener to number of people input field
+numPeopleInput.addEventListener("input", (e) => {
+  updateTipAndTotal();
 });
 
-custom.addEventListener("click", (e) => {
-  // Your logic for the custom div click event
+// Add click event listener to reset button
+resetBtn.addEventListener("click", (e) => {
+  reset();
 });
 
-const inputField = document.querySelector("#billInput");
-const inputValue = inputField.value;
+// Set the tip percentage and update the display
+function setTipPercent(percent) {
+  tipBtns.forEach((btn) => {
+    btn.classList.remove("active");
+  });
+  if (percent === 0) {
+    customTipInput.value = "";
+  }
+  tipPercent = percent;
+  updateTipAndTotal();
+}
 
-const reset = document.querySelector("#reset");
+// Calculate the tip and total amount, and update the display
+function updateTipAndTotal() {
+  const bill = parseFloat(billInput.value) || 0;
+  const numPeople = parseInt(numPeopleInput.value) || 1;
+  const tipAmount = (bill * tipPercent) / (100 * numPeople);
+  const total = bill / numPeople + tipAmount;
+  tipAmountDisplay.textContent = tipAmount.toFixed(2) + "kr";
+  totalDisplay.textContent = total.toFixed(2) + "kr";
+}
 
-reset.addEventListener("click", () => {
-  console.log(inputField.value);
-});
+// Reset the app to its initial state
+function reset() {
+  tipPercent = 0;
+  tipBtns.forEach((btn) => {
+    btn.classList.remove("active");
+  });
+  customTipInput.value = "";
+  billInput.value = "";
+  numPeopleInput.value = "";
+  tipAmountDisplay.textContent = "0.00kr";
+  totalDisplay.textContent = "0.00kr";
+}
